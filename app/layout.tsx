@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     siteName: 'Habibi Details',
     images: [
       {
-        url: '/images/home_background.png', // Create a nice 1200x630 image and put it in your public folder
+        url: '/site_preview.png', // Create a nice 1200x630 image and put it in your public folder
         width: 1200,
         height: 630,
       },
