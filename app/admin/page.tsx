@@ -91,7 +91,16 @@ export default async function AdminDashboard({ searchParams }: { searchParams: P
         </div>
       </header>
 
-      <main className="flex-1 p-8 overflow-x-auto [scrollbar-width:thin]">
+      <main className="flex-1 px-8 pb-8 pt-6 overflow-x-auto [scrollbar-width:thin]">
+
+        {/* Link to List View */}
+        <div className="flex justify-end mb-4 pr-4">
+          <Link href="/admin/list" className="text-[#F9D042] text-sm font-bold hover:text-white transition-colors flex items-center gap-2">
+            See List View 
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          </Link>
+        </div>
+
         <div className="min-w-[1000px]"> 
           
           {/* Header Row */}

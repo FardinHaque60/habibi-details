@@ -27,9 +27,6 @@ export default function Home() {
       <Navbar />
 
       {/* HERO SECTION */}
-      {/* Changed justify-center to justify-start and added pt-[25vh] to push content closer to top */}
-      {/* Changed min-h-[100vh] to min-h-[80vh] md:min-h-[100vh] */}
-      {/* Adjusted padding: pt-[20vh] on mobile, pt-[25vh] on desktop */}
       <section className="relative w-full min-h-[80vh] md:min-h-screen flex flex-col items-center justify-center overflow-hidden">
         
         {/* Clean Next.js Image Component */}
@@ -102,7 +99,7 @@ export default function Home() {
           <div className="flex flex-col lg:flex-row items-center justify-center gap-4 sm:gap-6 w-full">
             
             {/* TILE 1: Mobile Detailing */}
-            <a href="#packages" className="group relative w-full sm:w-[280px] md:w-[320px] h-[160px] md:h-[200px] rounded-[24px] overflow-hidden block shrink-0">
+            <Link href="/#packages" className="group relative w-full sm:w-[280px] md:w-[320px] h-[160px] md:h-[200px] rounded-[24px] overflow-hidden block shrink-0">
               <Image 
                 src="/images/car3.jpg" 
                 alt="Mobile Detailing Service" 
@@ -125,7 +122,7 @@ export default function Home() {
                   </svg>
                 </div>
               </div>
-            </a>
+            </Link>
 
             {/* TILE 2: Paint Polish */}
             <Link href="/services/paint" className="group relative w-full sm:w-[280px] md:w-[320px] h-[160px] md:h-[200px] rounded-[24px] overflow-hidden block shrink-0">

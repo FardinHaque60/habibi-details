@@ -44,7 +44,7 @@ export default function About() {
                 href="tel:16198219839" 
                 className="text-black font-bold text-lg hover:text-blue-600 transition-colors"
               >
-                (619) 821-9839
+                (619) 821-9836
               </a> 
               <span> — we’re happy to help.</span>
             </div>
