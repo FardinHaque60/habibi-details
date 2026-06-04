@@ -3,6 +3,17 @@
 import { useState, useEffect } from "react";
 import { submitBooking } from "../actions/bookAppointments";
 import { createPortal } from "react-dom";
+
+// Helper function to safely get Pacific Time YYYY-MM-DD
+function getPTDateString(date: Date) {
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone: "America/Los_Angeles",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(date);
+}
+
 interface BookingModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -57,13 +68,20 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
     if (!formData.get("phone")) errors.phone = "Required";
     if (!formData.get("service")) errors.service = "Required";
     
-    // 2. Time Validation (8 AM to 5 PM)
+    // 2. Date/Time Validation (Pacific Time, 8 AM to 5 PM)
     const apptTime = formData.get("appointmentTime") as string;
     if (!apptTime) {
       errors.appointmentTime = "Required";
     } else {
+      const selectedDate = apptTime.split("T")[0];
+      const currentPTDate = getPTDateString(new Date());
+
+      if (selectedDate < currentPTDate) {
+        errors.appointmentTime = "Appointments cannot be scheduled in the past.";
+      }
+
       // Split the "YYYY-MM-DDTHH:mm" string
-      const timePart = apptTime.split("T")[1]; 
+      const timePart = apptTime.split("T")[1];
       if (timePart) {
         const [hour, minute] = timePart.split(":").map(Number);
         // If before 8:00 AM OR after 5:00 PM

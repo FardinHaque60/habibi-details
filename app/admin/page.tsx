@@ -15,15 +15,6 @@ function getPTDateString(date: Date) {
   }).format(date); 
 }
 
-// Helper for "June 4th" formatting
-function getOrdinalSuffix(i: number) {
-  const j = i % 10, k = i % 100;
-  if (j == 1 && k != 11) return i + "st";
-  if (j == 2 && k != 12) return i + "nd";
-  if (j == 3 && k != 13) return i + "rd";
-  return i + "th";
-}
-
 export default async function AdminDashboard({ searchParams }: { searchParams: Promise<{ startDate?: string }> }) {
   const cookieStore = await cookies();
   const session = cookieStore.get("admin_session");

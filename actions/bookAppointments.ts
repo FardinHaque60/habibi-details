@@ -122,7 +122,7 @@ export async function submitBooking(formData: FormData) {
 
     // Send to Admin (Yourself)
     await transporter.sendMail({
-      from: `"Habibi Website" <${process.env.GMAIL_USER}>`,
+      from: `"Habibi Details Website" <${process.env.GMAIL_USER}>`,
       to: process.env.GMAIL_USER, // Sends it to your own inbox
       subject: `New Booking: ${formEntry.first_name} ${formEntry.last_name} - ${formEntry.service}`,
       html: adminHtml,
