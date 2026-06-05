@@ -41,7 +41,7 @@ export default function About() {
             <div className="text-gray-600 mt-2">
               <p>Have questions or want a recommendation? Call/text</p>
               <a 
-                href="tel:16198219839" 
+                href="tel:16198219836" 
                 className="text-black font-bold text-lg hover:text-blue-600 transition-colors"
               >
                 (619) 821-9836
