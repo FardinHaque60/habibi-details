@@ -51,13 +51,13 @@ export default function Navbar() {
             {/* Desktop Dropdown Box */}
             <div className={`absolute top-full right-0 w-48 py-2 bg-white/95 backdrop-blur-2xl border rounded-[18px] border-white/20 shadow-2xl z-50 transition-all duration-200 overflow-hidden ${isServicesOpen ? 'opacity-100 visible translate-y-4' : 'opacity-0 invisible translate-y-2'} group-hover:opacity-100 group-hover:visible group-hover:translate-y-4`}>
               {/* Added the anchor link /#packages here */}
-              <Link href="/#packages" onClick={() => setIsServicesOpen(false)} className="block px-4 py-2 hover:bg-black/5 transition-colors">Car Detailing</Link>
+              <a href="/#packages" onClick={() => setIsServicesOpen(false)} className="block px-4 py-2 hover:bg-black/5 transition-colors">Car Detailing</a>
               <Link href="/services/ceramic" onClick={() => setIsServicesOpen(false)} className="block px-4 py-2 hover:bg-black/5 transition-colors">Ceramic Coating</Link>
               <Link href="/services/paint" onClick={() => setIsServicesOpen(false)} className="block px-4 py-2 hover:bg-black/5 transition-colors">Paint Polish</Link>
             </div>
           </div>
 
-          <Link href="/#faq" className="hover:text-gray-600 transition-colors">FAQ</Link>
+          <a href="/#faq" className="hover:text-gray-600 transition-colors">FAQ</a>
           <Link href="/about" className="hover:text-gray-600 transition-colors">About Us</Link>
 
           {/* Vertical Divider line */}
@@ -104,10 +104,10 @@ export default function Navbar() {
       >
         <div className="flex flex-col py-4 px-6 gap-4 text-[20px] font-medium text-black tracking-[-0.05em]">
           {/* Added the anchor link here as well */}
-          <Link href="/#packages" onClick={() => setIsMobileMenuOpen(false)} className="border-b border-gray-200/50 pb-2">Car Detailing</Link>
+          <a href="/#packages" onClick={() => setIsMobileMenuOpen(false)} className="border-b border-gray-200/50 pb-2">Car Detailing</a>
           <Link href="/services/ceramic" onClick={() => setIsMobileMenuOpen(false)} className="border-b border-gray-200/50 pb-2">Ceramic Coating</Link>
           <Link href="/services/paint" onClick={() => setIsMobileMenuOpen(false)} className="border-b border-gray-200/50 pb-2">Paint Polish</Link>
-          <Link href="/#faq" onClick={() => setIsMobileMenuOpen(false)} className="border-b border-gray-200/50 pb-2">FAQ</Link>
+          <a href="/#faq" onClick={() => setIsMobileMenuOpen(false)} className="border-b border-gray-200/50 pb-2">FAQ</a>
           <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="border-b border-gray-200/50 pb-2">About Us</Link>
           
           <div className="flex flex-col mt-2">
