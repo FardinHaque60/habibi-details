@@ -141,35 +141,71 @@ export default async function AdminDashboard({ searchParams }: { searchParams: P
               </div>
 
               {next7Days.map((dateStr) => {
+                // 1. Get bookings for this day
                 const dayBookings = (bookings || [])
                   .filter((b) => b.appt_time && b.appt_time.startsWith(dateStr))
-                  .map(b => ({ ...b, colIndex: 0 })); 
+                  .map(b => ({ ...b, colIndex: 0, totalCols: 1 })); // Added totalCols locally
 
-                const columns: typeof dayBookings[] = [];
+                // 2. OVERLAP ALGORITHM PART 1: Group events into independent "Clusters"
+                const clusters: typeof dayBookings[] = [];
+                let currentCluster: typeof dayBookings = [];
+                let currentClusterEnd = 0;
+
                 dayBookings.forEach((booking) => {
                   const bStart = new Date(booking.appt_time).getTime();
-                  let placed = false;
-                  
-                  for (let i = 0; i < columns.length; i++) {
-                    const col = columns[i];
-                    const lastInCol = col[col.length - 1];
-                    const lastEnd = new Date(lastInCol.appt_time).getTime() + (2 * 60 * 60 * 1000); 
-                    
-                    if (bStart >= lastEnd) {
-                      col.push(booking);
-                      booking.colIndex = i;
-                      placed = true;
-                      break;
-                    }
-                  }
-                  
-                  if (!placed) {
-                    booking.colIndex = columns.length;
-                    columns.push([booking]);
+                  const bEnd = bStart + (2 * 60 * 60 * 1000); // 2 hours later
+
+                  if (currentCluster.length === 0) {
+                    currentCluster.push(booking);
+                    currentClusterEnd = bEnd;
+                  } else if (bStart < currentClusterEnd) {
+                    // This overlaps with the current cluster group
+                    currentCluster.push(booking);
+                    currentClusterEnd = Math.max(currentClusterEnd, bEnd);
+                  } else {
+                    // No overlap! Save the old cluster, start a new one
+                    clusters.push(currentCluster);
+                    currentCluster = [booking];
+                    currentClusterEnd = bEnd;
                   }
                 });
+                
+                if (currentCluster.length > 0) {
+                  clusters.push(currentCluster);
+                }
 
-                const totalCols = columns.length || 1;
+                // 3. OVERLAP ALGORITHM PART 2: Assign columns within each specific cluster
+                clusters.forEach((cluster) => {
+                  const columns: typeof dayBookings[] = [];
+                  
+                  cluster.forEach((booking) => {
+                    const bStart = new Date(booking.appt_time).getTime();
+                    let placed = false;
+                    
+                    for (let i = 0; i < columns.length; i++) {
+                      const lastInCol = columns[i][columns[i].length - 1];
+                      const lastEnd = new Date(lastInCol.appt_time).getTime() + (2 * 60 * 60 * 1000); 
+                      
+                      if (bStart >= lastEnd) {
+                        columns[i].push(booking);
+                        booking.colIndex = i;
+                        placed = true;
+                        break;
+                      }
+                    }
+                    
+                    if (!placed) {
+                      booking.colIndex = columns.length;
+                      columns.push([booking]);
+                    }
+                  });
+
+                  // 4. Assign this cluster's max width to ONLY the events in this cluster
+                  const clusterTotalCols = columns.length || 1;
+                  cluster.forEach(booking => {
+                    booking.totalCols = clusterTotalCols;
+                  });
+                });
 
                 return (
                   <div key={`col-${dateStr}`} className="flex-1 relative border-r border-white/10 pt-4">
@@ -189,7 +225,8 @@ export default async function AdminDashboard({ searchParams }: { searchParams: P
                           booking={booking} 
                           topOffset={topOffset} 
                           blockHeight={blockHeight} 
-                          totalCols={totalCols} 
+                          // NOW USING THE BOOKING'S SPECIFIC CLUSTER WIDTH
+                          totalCols={booking.totalCols} 
                         />
                       );
                     })}
