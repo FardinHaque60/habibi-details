@@ -19,20 +19,21 @@ export default function Navbar() {
       <div className="flex items-center justify-between px-6 py-3 bg-white/80 backdrop-blur-lg border border-white/20 rounded-[38px] shadow-[inset_0_1px_2px_rgba(255,255,255,0.4),0_8px_32px_rgba(0,0,0,0.05)] relative z-50">
         
         {/* Left Side: Logo */}
-        <Link href="/" className="flex items-center h-12 md:h-14 shrink-0">
-          <Image 
-            src="/logo.png" 
-            alt="Habibi Details Logo" 
-            width={200} 
-            height={80} 
-            className="object-contain h-full w-auto" 
-            priority
-          />
-        </Link>
+        <div className="flex-1 flex justify-start">
+          <Link href="/" className="flex items-center h-12 md:h-14 shrink-0">
+            <Image 
+              src="/logo.png" 
+              alt="Habibi Details Logo" 
+              width={200} 
+              height={80} 
+              className="object-contain h-full w-auto" 
+              priority
+            />
+          </Link>
+        </div>
 
-        {/* Right Side: Desktop Links */}
-        <div className="hidden md:flex items-center gap-6 text-[14px] tracking-[-0.05em] leading-[160%] font-medium text-black">
-          
+        {/* Middle: Desktop Links */}
+        <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center gap-6 text-[14px] tracking-[-0.05em] leading-[160%] font-medium text-black">
           {/* Services Dropdown (Hover + Click) */}
           <div className="relative group py-4">
             <button
@@ -59,15 +60,15 @@ export default function Navbar() {
 
           <a href="/#faq" className="hover:text-gray-600 transition-colors">FAQ</a>
           <Link href="/about" className="hover:text-gray-600 transition-colors">About Us</Link>
+        </div>
 
-          {/* Vertical Divider line */}
-          <div className="h-8 w-[1px] bg-gray-200 mx-1"></div>
-
+        {/* right side */}
+        <div className="hidden lg:flex flex-1 justify-end items-center gap-4 xl:gap-6">
           {/* New Framer Phone Number Block */}
           <a href="tel:6198219836" className="flex items-center gap-2 group shrink-0">
             {/* SVG converted perfectly from your HTML snippet */}
             <svg 
-              className="w-8 h-8 text-[#006fff] group-hover:scale-110 transition-transform" 
+              className="w-8 h-8 text-[#2d9639] group-hover:scale-110 transition-transform" 
               viewBox="0 0 34 34" 
               fill="currentColor"
             >
@@ -80,7 +81,6 @@ export default function Navbar() {
             </div>
           </a>
 
-
           <button onClick={() => setIsModalOpen(true)} className="cursor-pointer px-5 py-2.5 bg-black text-white rounded-full hover:bg-gray-800 transition-colors shrink-0">
             Book Now
           </button>
@@ -89,7 +89,7 @@ export default function Navbar() {
         {/* Mobile Menu Button (Hamburger to X) */}
         <button 
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden flex flex-col items-center justify-center w-10 h-10 rounded-lg relative z-50"
+          className="lg:hidden flex flex-col items-center justify-center w-10 h-10 rounded-lg relative z-50"
         >
           <span className={`w-5 h-[2px] bg-black absolute transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45' : '-translate-y-1.5'}`}></span>
           <span className={`w-5 h-[2px] bg-black absolute transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
@@ -100,7 +100,7 @@ export default function Navbar() {
 
       {/* Mobile Dropdown Menu (Still uses state so it functions on click/tap) */}
       <div 
-        className={`absolute top-[120%] left-0 w-full bg-white/80 backdrop-blur-lg border border-white/30 rounded-[18px] shadow-lg transition-all duration-300 overflow-hidden md:hidden ${isMobileMenuOpen ? 'opacity-100 translate-y-0 visible' : 'opacity-0 -translate-y-4 invisible'}`}
+        className={`absolute top-[120%] left-0 w-full bg-white/80 backdrop-blur-lg border border-white/30 rounded-[18px] shadow-lg transition-all duration-300 overflow-hidden lg:hidden ${isMobileMenuOpen ? 'opacity-100 translate-y-0 visible' : 'opacity-0 -translate-y-4 invisible'}`}
       >
         <div className="flex flex-col py-4 px-6 gap-4 text-[20px] font-medium text-black tracking-[-0.05em]">
           {/* Added the anchor link here as well */}

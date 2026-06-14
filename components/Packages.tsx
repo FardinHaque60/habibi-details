@@ -10,7 +10,7 @@ const packagesData = {
     {
       title: "Refresh Detail",
       badge: "Refresh",
-      badgeColor: "text-[#FFDD00]",
+      badgeColor: "text-[#4AFF5C]",
       image: "/images/car4.jpg",
       features: [
         "Double vacuum & full interior deep clean",
@@ -23,7 +23,7 @@ const packagesData = {
     {
       title: "Gold Full Detail",
       badge: "Popular",
-      badgeColor: "text-[#6EFFFF]",
+      badgeColor: "text-[#FFDD00]",
       image: "/images/car3.jpg",
       features: [
         "Double vacuum & full interior deep clean",
@@ -78,7 +78,7 @@ const packagesData = {
     {
       title: "Cut & Polish",
       badge: "Vip",
-      badgeColor: "text-[#FFDD00]",
+      badgeColor: "text-[#6EFFFF]",
       image: "/images/car2.png",
       features: [
         "1-step paint correction & hand wash",
@@ -151,7 +151,7 @@ export default function Packages() {
               onClick={() => setActiveTab(tab)}
               className={`cursor-pointer flex-1 sm:flex-none px-3 sm:px-8 py-2.5 sm:py-3 text-[13px] sm:text-[15px] font-semibold tracking-[-0.03em] transition-all rounded-lg ${
                 activeTab === tab 
-                  ? "bg-blue-600 text-white shadow-[0_0_15px_rgba(0,112,252,0.4)]" 
+                  ? "bg-[#2d9639] text-white shadow-[0_0_15px_rgba(45,150,57,0.4)]" 
                   : "text-gray-500 hover:text-black hover:bg-gray-50"
               }`}
             >
