@@ -26,11 +26,11 @@ const packagesData = {
       badgeColor: "text-[#FFDD00]",
       image: "/images/car3.jpg",
       features: [
-        "Double vacuum & full interior deep clean",
-        "Steam sanitize, stain removal & protectant",
-        "Mats & trunk detailed; door jambs cleaned",
-        "Hand wash, clay bar & light spot polish",
-        "Bug removal, windows, wheels; 3-month wax"
+        "Double vacuum & detailed interior deep clean",
+        "Light steam cleaning & spot stain treatment",
+        "Leather cleaned & UV protectant applied",
+        "Decontamination for smooth paint",
+        "Bug removal, windows, wheels; 6-month wax"
       ]
     },
     {
@@ -151,7 +151,7 @@ export default function Packages() {
               onClick={() => setActiveTab(tab)}
               className={`cursor-pointer flex-1 sm:flex-none px-3 sm:px-8 py-2.5 sm:py-3 text-[13px] sm:text-[15px] font-semibold tracking-[-0.03em] transition-all rounded-lg ${
                 activeTab === tab 
-                  ? "bg-[#2d9639] text-white shadow-[0_0_15px_rgba(45,150,57,0.4)]" 
+                  ? "bg-[#31c617] text-white shadow-[0_0_15px_rgba(45,150,57,0.4)]" 
                   : "text-gray-500 hover:text-black hover:bg-gray-50"
               }`}
             >

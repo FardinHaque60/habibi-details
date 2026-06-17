@@ -68,7 +68,7 @@ export default function Navbar() {
           <a href="tel:6198219836" className="flex items-center gap-2 group shrink-0">
             {/* SVG converted perfectly from your HTML snippet */}
             <svg 
-              className="w-8 h-8 text-[#2d9639] group-hover:scale-110 transition-transform" 
+              className="w-8 h-8 text-[#31d414] group-hover:scale-110 transition-transform" 
               viewBox="0 0 34 34" 
               fill="currentColor"
             >

@@ -68,7 +68,7 @@ export default function Home() {
             {/* 2. THIS IS THE ACTUAL BUTTON */}
             <button 
               onClick={() => setIsModalOpen(true)}
-              className="cursor-pointer group flex items-center justify-center gap-2 px-8 py-4 rounded-[62px] bg-[#2d9639] border border-[#40c24e] shadow-[inset_0_5px_11px_3px_#5ee06b] hover:brightness-105 transition-all w-full max-w-[280px]"
+              className="cursor-pointer group flex items-center justify-center gap-2 px-8 py-4 rounded-[62px] bg-[#31d414] border border-[#6BFF4D] shadow-[inset_0_5px_11px_3px_#9CFF85] hover:brightness-105 transition-all w-full max-w-[280px]"
             >
               <span className="text-black text-[16px] font-medium tracking-[-0.05em] leading-none">
                 Book Online
@@ -117,7 +117,7 @@ export default function Home() {
                 </h3>
                 
                 {/* Yellow Learn More Button (Scaled down slightly for smaller tile) */}
-                <div className="flex items-center gap-2 px-4 py-2 rounded-[32px] bg-[#2d9639] text-white shadow-[inset_2px_2px_4px_1px_rgba(255,255,255,0.4)] group-hover:brightness-105 transition-all">
+                <div className="flex items-center gap-2 px-4 py-2 rounded-[32px] bg-[#31d414] shadow-[inset_2px_2px_4px_1px_rgba(255,255,255,0.7)] group-hover:brightness-105 transition-all">
                   <span className="text-black text-[13px] font-medium tracking-[-0.06em]">Learn More</span>
                   <svg className="w-3 h-3 text-black transform group-hover:translate-x-1 transition-transform rotate-180" viewBox="0 0 11 9" fill="currentColor">
                     <path d="M0.176 4.08 L4.148 0.173 C4.262 0.061 4.413 0 4.574 0 C4.735 0 4.886 0.061 5 0.173 L5.36 0.528 C5.474 0.639 5.536 0.788 5.536 0.946 C5.536 1.105 5.474 1.258 5.36 1.37 L3.043 3.654 L10.406 3.654 C10.738 3.654 11 3.91 11 4.236 L11 4.738 C11 5.064 10.738 5.346 10.406 5.346 L3.017 5.346 L5.36 7.643 C5.474 7.754 5.536 7.899 5.536 8.057 C5.536 8.216 5.474 8.363 5.36 8.474 L5 8.828 C4.886 8.939 4.735 9 4.574 9 C4.413 9 4.262 8.938 4.148 8.827 L0.176 4.92 C0.062 4.808 0 4.659 0 4.5 C0 4.341 0.062 4.191 0.176 4.08 Z"/>
@@ -141,7 +141,7 @@ export default function Home() {
                   Paint Polish
                 </h3>
                 
-                <div className="flex items-center gap-2 px-4 py-2 rounded-[32px] bg-[#2d9639] text-white shadow-[inset_2px_2px_4px_1px_rgba(255,255,255,0.4)] group-hover:brightness-105 transition-all">
+                <div className="flex items-center gap-2 px-4 py-2 rounded-[32px] bg-[#31d414] shadow-[inset_2px_2px_4px_1px_rgba(255,255,255,0.7)] group-hover:brightness-105 transition-all">
                   <span className="text-black text-[13px] font-medium tracking-[-0.06em]">Learn More</span>
                   <svg className="w-3 h-3 text-black transform group-hover:translate-x-1 transition-transform rotate-180" viewBox="0 0 11 9" fill="currentColor">
                     <path d="M0.176 4.08 L4.148 0.173 C4.262 0.061 4.413 0 4.574 0 C4.735 0 4.886 0.061 5 0.173 L5.36 0.528 C5.474 0.639 5.536 0.788 5.536 0.946 C5.536 1.105 5.474 1.258 5.36 1.37 L3.043 3.654 L10.406 3.654 C10.738 3.654 11 3.91 11 4.236 L11 4.738 C11 5.064 10.738 5.346 10.406 5.346 L3.017 5.346 L5.36 7.643 C5.474 7.754 5.536 7.899 5.536 8.057 C5.536 8.216 5.474 8.363 5.36 8.474 L5 8.828 C4.886 8.939 4.735 9 4.574 9 C4.413 9 4.262 8.938 4.148 8.827 L0.176 4.92 C0.062 4.808 0 4.659 0 4.5 C0 4.341 0.062 4.191 0.176 4.08 Z"/>
@@ -165,7 +165,7 @@ export default function Home() {
                   Ceramic Coating
                 </h3>
                 
-                <div className="flex items-center gap-2 px-4 py-2 rounded-[32px] bg-[#2d9639] text-white shadow-[inset_2px_2px_4px_1px_rgba(255,255,255,0.4)] group-hover:brightness-105 transition-all">
+                <div className="flex items-center gap-2 px-4 py-2 rounded-[32px] bg-[#31d414] shadow-[inset_2px_2px_4px_1px_rgba(255,255,255,0.7)] group-hover:brightness-105 transition-all">
                   <span className="text-black text-[13px] font-medium tracking-[-0.06em]">Learn More</span>
                   <svg className="w-3 h-3 text-black transform group-hover:translate-x-1 transition-transform rotate-180" viewBox="0 0 11 9" fill="currentColor">
                     <path d="M0.176 4.08 L4.148 0.173 C4.262 0.061 4.413 0 4.574 0 C4.735 0 4.886 0.061 5 0.173 L5.36 0.528 C5.474 0.639 5.536 0.788 5.536 0.946 C5.536 1.105 5.474 1.258 5.36 1.37 L3.043 3.654 L10.406 3.654 C10.738 3.654 11 3.91 11 4.236 L11 4.738 C11 5.064 10.738 5.346 10.406 5.346 L3.017 5.346 L5.36 7.643 C5.474 7.754 5.536 7.899 5.536 8.057 C5.536 8.216 5.474 8.363 5.36 8.474 L5 8.828 C4.886 8.939 4.735 9 4.574 9 C4.413 9 4.262 8.938 4.148 8.827 L0.176 4.92 C0.062 4.808 0 4.659 0 4.5 C0 4.341 0.062 4.191 0.176 4.08 Z"/>

@@ -92,7 +92,7 @@ export default function Ceramic() {
                 <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
                     
                     {/* Yellow "Book Now" Button with Arrow */}
-                    <button onClick={() => setIsModalOpen(true)} className="cursor-pointer group relative flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 bg-[#e8b10e] border border-[#fff12e] rounded-[62px] text-black font-medium tracking-[-0.05em] shadow-[inset_0px_5px_11px_3px_rgba(255,251,38,0.8)] hover:bg-[#f0bc1c] transition-all">
+                    <button onClick={() => setIsModalOpen(true)} className="cursor-pointer group relative flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 bg-[#31d414] border border-[#6BFF4D] shadow-[inset_0_5px_11px_3px_#9CFF85] rounded-[62px] text-black font-medium tracking-[-0.05em] hover:bg-[#5dec41] transition-all">
                         <span>Book Now</span>
                         <svg className="w-3 h-3 text-black transform rotate-180 group-hover:translate-x-1 transition-transform" viewBox="0 0 11 9" fill="currentColor">
                             <path d="M0.176 4.08 L4.148 0.173 C4.262 0.061 4.413 0 4.574 0 C4.735 0 4.886 0.061 5 0.173 L5.36 0.528 C5.474 0.639 5.536 0.788 5.536 0.946 C5.536 1.105 5.474 1.258 5.36 1.37 L3.043 3.654 L10.406 3.654 C10.738 3.654 11 3.91 11 4.236 L11 4.738 C11 5.064 10.738 5.346 10.406 5.346 L3.017 5.346 L5.36 7.643 C5.474 7.754 5.536 7.899 5.536 8.057 C5.536 8.216 5.474 8.363 5.36 8.474 L5 8.828 C4.886 8.939 4.735 9 4.574 9 C4.413 9 4.262 8.938 4.148 8.827 L0.176 4.92 C0.062 4.808 0 4.659 0 4.5 C0 4.341 0.062 4.191 0.176 4.08 Z" />

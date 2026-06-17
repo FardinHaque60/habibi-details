@@ -51,9 +51,9 @@ export default function CompareTable() {
             <div className="flex-1 bg-white rounded-[24px] p-8 md:p-10 flex flex-col shadow-2xl relative">
               <div className="flex flex-col items-center mb-8">
                 {/* Changed to Deep Green */}
-                <h3 className="text-[26px] font-semibold text-[#166534] tracking-[-0.04em] mb-1">Habibi Detailing</h3>
+                <h3 className="text-[26px] font-semibold text-black tracking-[-0.04em] mb-1">Habibi Detailing</h3>
                 {/* Changed to Bright Mint Green */}
-                <span className="text-[13px] font-bold tracking-[0.06em] text-[#19cf5c] uppercase">Recommended</span>
+                <span className="text-[13px] font-bold tracking-[0.06em] text-gray-500 uppercase">Recommended</span>
               </div>
               <div className="flex flex-col gap-6">
                 {[
@@ -73,7 +73,7 @@ export default function CompareTable() {
                       <path d="M 19.064 10.809 L 13.71 16.162 L 10.935 13.39 C 10.333 12.787 9.356 12.787 8.754 13.39 C 8.151 13.992 8.151 14.969 8.754 15.572 L 12.646 19.465 C 13.232 20.051 14.184 20.051 14.77 19.465 L 21.243 12.991 C 21.846 12.389 21.846 11.412 21.243 10.809 C 20.641 10.207 19.666 10.207 19.064 10.809 Z" fill="#e6f7e8"/>
                     </svg>
                     {/* Changed to Deep Green */}
-                    <p className="text-[16px] text-[#166534] font-medium leading-[160%] tracking-[-0.04em]">{text}</p>
+                    <p className="text-[16px] text-black font-medium leading-[160%] tracking-[-0.04em]">{text}</p>
                   </div>
                 ))}
               </div>
